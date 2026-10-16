@@ -73,7 +73,7 @@ jobs:
           PGPASSWORD: postgres
         run:
           psql -h localhost -U postgres -d livraria -f docker/init/01-create-tables.sql
-          psql -hlocalhost -u postgres -f docker/init/02-create-test-db.sql    
+          psql -h localhost -U postgres -f docker/init/02-create-test-db.sql    
 
       - run: npm run test:int:all
       - run: npm run test:e2e:all
